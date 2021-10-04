@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_app/main.dart';
 
+import 'Buttons/grey_button.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -11,12 +13,40 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: d_lightGray,
         body: SingleChildScrollView(
           child: Column(
-            children: const [
-              DateSection(),
+            children: [
+              const DateSection(),
               // GroupsSection(),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: CardsSection(),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                child: CardsSection(
+                  color: d_purple,
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                child: CardsSection(color: d_blue),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                child: CardsSection(color: d_purple),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                child: CardsSection(color: d_blue),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                child: CardsSection(color: d_purple),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                child: CardsSection(color: d_blue),
               ),
             ],
           ),
@@ -30,8 +60,8 @@ class DateSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
-      padding: const EdgeInsets.fromLTRB(30, 20, 30, 10),
+      // height: 150,
+      padding: const EdgeInsets.fromLTRB(30, 70, 30, 10),
       child: Row(
         children: [
           Wrap(
@@ -89,7 +119,9 @@ class DateContainer extends StatelessWidget {
 }
 
 class CardsSection extends StatelessWidget {
-  const CardsSection({Key? key}) : super(key: key);
+  var color;
+
+  CardsSection({Key? key, this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -111,9 +143,10 @@ class CardsSection extends StatelessWidget {
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
                         fontSize: 14,
-                        color: Colors.grey[400])),
+                        color: Colors.grey[color == d_purple ? 400 : 200])),
                 Container(
                   height: 50,
+                  // rounded profile pictures
                 )
               ],
             ),
@@ -124,13 +157,17 @@ class CardsSection extends StatelessWidget {
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
                         fontSize: 14,
-                        color: Colors.grey[400])),
+                        color: Colors.grey[color == d_purple ? 400 : 200])),
+                Container(
+                  height: 25,
+                ),
+                ButtonGrey(),
               ],
             ),
           ],
         ),
       ),
-      color: d_purple,
+      color: color,
     );
   }
 }
@@ -145,6 +182,27 @@ class GroupsSection extends StatelessWidget {
       leading: Icon(Icons.person),
       title: Text('Test'),
       trailing: Text('tes12'),
+    );
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  const SecondRoute({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Route"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('Go back!'),
+        ),
+      ),
     );
   }
 }
