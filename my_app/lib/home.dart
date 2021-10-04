@@ -13,6 +13,11 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: const [
               DateSection(),
+              // GroupsSection(),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: CardsSection(),
+              ),
             ],
           ),
         ));
@@ -26,7 +31,7 @@ class DateSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 200,
-      padding: const EdgeInsets.fromLTRB(20, 20, 20, 10),
+      padding: const EdgeInsets.fromLTRB(30, 20, 30, 10),
       child: Row(
         children: [
           Wrap(
@@ -47,7 +52,7 @@ class DateSection extends StatelessWidget {
               child: Container(
             height: 40,
           )),
-          DateContainer()
+          const DateContainer()
         ],
       ),
     );
@@ -55,6 +60,8 @@ class DateSection extends StatelessWidget {
 }
 
 class DateContainer extends StatelessWidget {
+  const DateContainer({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -77,6 +84,67 @@ class DateContainer extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+}
+
+class CardsSection extends StatelessWidget {
+  const CardsSection({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      child: Container(
+        margin: EdgeInsets.only(left: 20.0, right: 20.0),
+        child: Row(
+          children: [
+            Column(
+              children: [
+                Text('Family',
+                    style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20,
+                      color: Colors.white,
+                    )),
+                Text('8 people',
+                    style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                        color: Colors.grey[400])),
+                Container(
+                  height: 50,
+                )
+              ],
+            ),
+            Expanded(child: Container(height: 150)),
+            Column(
+              children: [
+                Text('27 SEPT',
+                    style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                        color: Colors.grey[400])),
+              ],
+            ),
+          ],
+        ),
+      ),
+      color: d_purple,
+    );
+  }
+}
+
+class GroupsSection extends StatelessWidget {
+  const GroupsSection({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const ListTile(
+      tileColor: Colors.red,
+      leading: Icon(Icons.person),
+      title: Text('Test'),
+      trailing: Text('tes12'),
     );
   }
 }
