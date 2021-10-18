@@ -41,5 +41,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    <key>NSCameraUsageDescription</key>
+    <string>tot ake sjfedscdsv</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>tot ake sjfedscdsv</string>
+    <key>NSCameraUsageDescription</key>
+    <string>tot ake sjfedscdsv</string>
 </dict>
 </plist>

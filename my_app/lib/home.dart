@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_app/main.dart';
+import 'package:my_app/widget/appbar_profile.dart';
 
 import 'Buttons/grey_button.dart';
 
@@ -18,34 +19,34 @@ class HomeScreen extends StatelessWidget {
               // GroupsSection(),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: CardsSection(
                   color: d_purple,
                 ),
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: CardsSection(color: d_blue),
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: CardsSection(color: d_purple),
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: CardsSection(color: d_blue),
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: CardsSection(color: d_purple),
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: CardsSection(color: d_blue),
               ),
             ],
@@ -182,27 +183,6 @@ class GroupsSection extends StatelessWidget {
       leading: Icon(Icons.person),
       title: Text('Test'),
       trailing: Text('tes12'),
-    );
-  }
-}
-
-class SecondRoute extends StatelessWidget {
-  const SecondRoute({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Second Route"),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Go back!'),
-        ),
-      ),
     );
   }
 }

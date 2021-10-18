@@ -9,16 +9,16 @@ const d_lightGray = Color(0xFFF6FAFE);
 const d_item = Color(0xFFEAE8FF);
 
 void main() {
-    runApp(MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-    @override
-    Widget build(BuildContext context) {
-        return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: 'Bank App',
-            home: BottomBar(),
-        );
-    }
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Bank App',
+      home: BottomBar(),
+    );
+  }
 }

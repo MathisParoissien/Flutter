@@ -3,6 +3,7 @@ import 'package:my_app/chat.dart';
 import 'package:my_app/main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../group_view.dart';
 import '../home.dart';
 
 // class ButtonGrey extends StatefulWidget {

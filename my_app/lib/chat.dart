@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:my_app/main.dart';
-
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({Key? key}) : super(key: key);
 
-    @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: d_lightGray,
-      appBar: AppBar(title: const Text('chat'),),
-      );
+      appBar: AppBar(
+        title: const Text('chat'),
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
+      ),
+    );
   }
 }
